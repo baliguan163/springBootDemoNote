@@ -14,6 +14,7 @@ public class CityController {
       @Autowired
       private CityMapper cityMapper;
      
+      //获取所有城市列表
       @RequestMapping("citylist")
       public List<City> findAll(){
      	 return cityMapper.findAll();
