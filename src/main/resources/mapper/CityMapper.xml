@@ -1,8 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ado.demo.mapper.UserMapper">
- <select id="findAll" resultType="user">
-  select * from user
- </select>
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ado.demo.mapper.CityMapper">
+<resultMap id="BaseResultMap" type="com.ado.demo.domain.City" >
+    <result column="province_id" property="provinceId" />
+    <result column="city_name" property="cityName" />
+</resultMap>
+<select id="findByProvinceId" resultMap="BaseResultMap">
+        select * from city where province_id = #{provinceId}
+    </select>
+<select id="findAll" resultMap="BaseResultMap">
+        select * from city
+    </select>
 </mapper>
+
+        <!--namespace 属性用于跟咱们业务中的那个 mapper 进行关联-->
+        <!--resultMap 标签用来定义字段映射和结果字段返回类型-->
+        <!--select 中的 id 属性用来跟咱们业中 mapper 的方法进行关联，查询到的结果就会返回给该方法-->
+        <!--#{}是占位符，表示需要动态获取的数据-->
