@@ -4,7 +4,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import com.ado.demo.domian.City;
 
-//@Mapper
+@Mapper
 public interface CityMapper {
     City findByProvinceId(Long provinceId);
     List<City> findAll();

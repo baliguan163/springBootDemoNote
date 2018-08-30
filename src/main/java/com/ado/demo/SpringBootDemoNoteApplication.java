@@ -9,8 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 //spring-boot 框架整合 MyBatis
 @SpringBootApplication
-@EnableAutoConfiguration
-@MapperScan("com.ado.demo.mapper") // 定义了在哪里扫描mapper文件
+//@MapperScan("com.ado.demo.mapper") // 定义了在哪里扫描mapper文件
 public class SpringBootDemoNoteApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootDemoNoteApplication.class, args);
