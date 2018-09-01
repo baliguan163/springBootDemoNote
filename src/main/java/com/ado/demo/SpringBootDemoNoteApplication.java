@@ -1,4 +1,5 @@
 package com.ado.demo;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,9 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 //spring-boot 框架整合 MyBatis
 @SpringBootApplication
-//@MapperScan("com.ado.demo.mapper") // 定义了在哪里扫描mapper文件
-public class SpringBootApp {
+// mapper 接口类扫描包配置
+@MapperScan("com.ado.demo.dao") // 定义了在哪里扫描mapper文件
+public class SpringBootDemoNoteApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootApp.class, args);
+		SpringApplication.run(SpringBootDemoNoteApplication.class, args);
 	}
 }
